@@ -63,9 +63,11 @@ public class Examen1P1_HectorRivera {
                             System.out.println();
                             System.out.println("A fallado");
                             dis=dis-(rand.nextInt(2)+3);
-                        }
+                        }//calcular disparo
+                        
                         System.out.println();
                         System.out.println();//Espacios para que se vea menos pegado
+                        
                         if(HP<=0){
                             HP=0;
                             System.out.println("Vida del zombie: " + HP);
@@ -90,14 +92,16 @@ public class Examen1P1_HectorRivera {
                             System.out.println("Listo para la siguente ronda: [s/n]");
                             desc=sc.next().charAt(0);
                             System.out.println();      
-                        }//fin IF
+                        }//condiciones de victoria/derrota
                          
-                        }// fin while juego
+                    }// fin while juego
+                    
                 }break;//fin case 1 Fight or Flight    
                 
                 case 2:
                     triF();
                 break;//fin case 2 Tri Fuerza    
+                
             }//fin switch
             System.out.println("------------------Menu------------------");
             System.out.println("1. Ejercicio práctico 1 – Fight or Flight");
@@ -113,14 +117,14 @@ public class Examen1P1_HectorRivera {
         int tam=sc.nextInt();
         
         while(tam<20 || (tam/2)%2==0){
-            System.out.println("Ingrese un numero mayor a 20 y que sea par");
+            System.out.println("Ingrese un numero mayor a 20 y que su residuo de divicion por 2 sea impar");
             tam=sc.nextInt();
         }//fin validacion tamaño
         
         for (int y = 0; y < tam/2+1; y++) {
             for (int x = 0; x < tam+1; x++) {
                 
-                if(x ==tam/2-y  || x == tam/2+y){//crear limite inicial de forma
+                if(x ==tam/2-y  || x == tam/2+y){//crear forma triangulo
                     System.out.print("*");    
                 }else if( (x+1<=y&&x>=tam/2-y) || ( x>=tam-y+1 && x <= tam/2+y) ){//crear y llenar triangulos de abajo
                     System.out.print("*");
